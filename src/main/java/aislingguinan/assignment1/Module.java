@@ -11,16 +11,18 @@ import java.util.*;
  *
  * @author absin_000
  */
-public class module {
+public class Module {
     String id;
     String name;
-    List<student> enrolledStudents = new ArrayList<>();
+    List<Student> enrolledStudents = new ArrayList<>();
     
     
-    public module(String id, String name, List<student> enrolledStudents){
+    public Module(String id, String name, Student [] enrolledStudents){
         this.id = id;
         this.name = name;
-        this.enrolledStudents = enrolledStudents;
+        for(int i=0;i<enrolledStudents.length;i++){
+            this.enrolledStudents.add(enrolledStudents[i]);
+        }
     }
     
       public String getId(){
@@ -40,8 +42,8 @@ public class module {
         this.name = name;
     }
     
-    public void addStudent(student student){
-        enrolledStudents.add(student);
+    public void addStudent(Student Student){
+        enrolledStudents.add(Student);
     }
     public List listStudent(){
         return enrolledStudents;

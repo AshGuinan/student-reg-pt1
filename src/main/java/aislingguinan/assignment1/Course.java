@@ -1,24 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package aislingguinan.assignment1;
 
 import java.util.*;
 import org.joda.time.*;
 
-public class course {
+public class Course {
     String id;
     String name;
-    List<module> modules = new ArrayList<>();
+    List<Module> modules = new ArrayList<>();
     LocalDate start;
     LocalDate end;
     
-    public course(String id, String name, List<module> modules, LocalDate start, LocalDate end){
+    public Course(String id, String name, Module [] modules, LocalDate start, LocalDate end){
         this.id = id;
         this.name = name;
-        this.modules = modules;
+        for(int i=0;i<modules.length;i++){
+            this.modules.add(modules[i]);
+        }
         this.start = start;
         this.end = end;
     }
@@ -40,7 +37,7 @@ public class course {
         this.name = name;
     }
     
-    public void addModule(module module){
+    public void addModule(Module module){
         modules.add(module);
     }
     
