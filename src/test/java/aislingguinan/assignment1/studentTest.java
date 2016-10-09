@@ -5,12 +5,8 @@
  */
 package aislingguinan.assignment1;
 
-import java.util.Date;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import java.util.*;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 /**
@@ -22,34 +18,16 @@ public class studentTest {
     public studentTest() {
     }
     
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
     /**
      * Test of getId method, of class student.
      */
     @org.junit.Test
     public void testGetId() {
         System.out.println("getId");
-        student instance = null;
-        int expResult = 0;
+        student instance = new student(1234, "john doe", "11/3/1993", "");
+        int expResult = 1234;
         int result = instance.getId();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -58,12 +36,10 @@ public class studentTest {
     @org.junit.Test
     public void testGetName() {
         System.out.println("getName");
-        student instance = null;
-        String expResult = "";
+        student instance = new student(1234, "john doe", "11/3/1993", "");
+        String expResult = "john doe";
         String result = instance.getName();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -72,12 +48,10 @@ public class studentTest {
     @org.junit.Test
     public void testGetDob() {
         System.out.println("getDob");
-        student instance = null;
-        Date expResult = null;
-        Date result = instance.getDob();
+        student instance = new student(1234, "john doe", "11/3/1993", "");
+        String expResult = "11/3/1993";
+        String result = instance.getDob();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -86,12 +60,11 @@ public class studentTest {
     @org.junit.Test
     public void testGetUser() {
         System.out.println("getUser");
-        student instance = null;
-        String expResult = "";
+        student instance = new student(1234, "john doe", "11/3/1993", "");
+        String expResult = "j.doe23";
+        instance.setUser();
         String result = instance.getUser();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

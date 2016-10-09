@@ -1,6 +1,7 @@
 package aislingguinan.assignment1;
 
-import java.util.Date;
+import static java.lang.Integer.*;
+import java.util.*;
 
 /**
  *
@@ -9,15 +10,19 @@ import java.util.Date;
 public class student {
     int id;
     String name;
-    Date dob;
+    int age;
+    String dob;
     String uName;
-    
     //student constructor
-    public student(int id, String name, Date dob, String uName){
+    public student(int id, String name,String dob, String uName){       
         this.id = id;
         this.name = name;
         this.dob = dob;
         this.uName = "";
+        Calendar now = Calendar.getInstance();
+        int year = now.get(Calendar.YEAR);
+        String [] y = dob.split("/");
+        age = year-parseInt(y[2]);
     }
     
     public int getId(){
@@ -37,20 +42,22 @@ public class student {
         this.name = name;
     }
     
-    public Date getDob(){
+    public String getDob(){
         return dob;
     }
     
-    public void setDob(Date date){
+    public void setDob(String date){
         this.dob = dob;
     }
     
     public String getUser(){
-       return "";
+       return uName;
     }
     
     public void setUser(){
-       
+       String [] n1 = name.split("\\s");
+       n1[0] = n1[0].substring(0,1);
+       this.uName = n1[0]+"."+n1[1]+age;
     }
 }
 
